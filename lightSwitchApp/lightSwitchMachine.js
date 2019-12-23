@@ -12,6 +12,6 @@ const toggleMachine = Machine({
 });
 
 // Machine instance with internal state
-const toggleService = interpret(toggleMachine)
+export const toggleService = interpret(toggleMachine)
   .onTransition(state => console.log(state.value))
   .start();

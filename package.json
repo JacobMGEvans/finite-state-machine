@@ -7,8 +7,12 @@
   "author": "Jacob Evans <cloud887@gmail.com>",
   "license": "MIT",
   "private": false,
-  "type": "module",
+  "scripts": {
+    "start": "yarn babel-node",
+    "switch-app": "parcel ./lightSwitchApp/index.html"
+  },
   "dependencies": {
+    "parcel-bundler": "^1.12.4",
     "typescript": "^3.7.4",
     "xstate": "^4.7.3"
   },

@@ -33,7 +33,7 @@
       "no-unused-expressions": "off",
       "consistent-return": "off",
       "class-methods-use-this": "off",
-      "react/prefer-stateless-function": "warn",
+      "react/prefer-stateless-function": "error",
       "no-nested-ternary": "off",
       "react/prop-types": "off",
       "babel/new-cap": "off",
