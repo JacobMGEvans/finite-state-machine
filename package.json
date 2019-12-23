@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "typescript": "^3.7.4",
     "xstate": "^4.7.3"
   },
   "devDependencies": {
