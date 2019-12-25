@@ -1,5 +1,3 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-export const useStyle = (stateOfMachine) => {
-
-}
+export const useStyle = (stateOfMachine, backgroundComponent) => {};

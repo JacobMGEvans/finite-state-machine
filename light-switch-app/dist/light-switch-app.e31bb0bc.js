@@ -37005,7 +37005,35 @@ function LightSwitch() {
     className: "spark4"
   })))));
 }
-},{"react":"node_modules/react/index.js","../../../machines/light-switch-machine":"../machines/light-switch-machine.js","./bulb.css":"components/LightSwitch/bulb.css"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../../../machines/light-switch-machine":"../machines/light-switch-machine.js","./bulb.css":"components/LightSwitch/bulb.css"}],"components/StarrySky/starrySky.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/StarrySky/StarrySky.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.StarrySky = StarrySky;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./starrySky.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function StarrySky() {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", {
+    className: "stars"
+  }), _react.default.createElement("div", {
+    className: "twinkling"
+  }), _react.default.createElement("div", {
+    className: "clouds"
+  }));
+}
+},{"react":"node_modules/react/index.js","./starrySky.css":"components/StarrySky/starrySky.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -37014,14 +37042,16 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _LightSwitch = require("./components/LightSwitch/LightSwitch");
 
+var _StarrySky = require("./components/StarrySky/StarrySky");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  return _react.default.createElement(_LightSwitch.LightSwitch, null);
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_StarrySky.StarrySky, null), _react.default.createElement(_LightSwitch.LightSwitch, null));
 };
 
 _reactDom.default.render(_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/LightSwitch/LightSwitch":"components/LightSwitch/LightSwitch.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/LightSwitch/LightSwitch":"components/LightSwitch/LightSwitch.js","./components/StarrySky/StarrySky":"components/StarrySky/StarrySky.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
