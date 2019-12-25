@@ -8,11 +8,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "yarn babel-node",
-    "light-switch": "yarn parcel ./light-switch-app/index.html"
+    "start": "yarn babel-node"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.4",
     "typescript": "^3.7.4",
     "xstate": "^4.7.3"
   },

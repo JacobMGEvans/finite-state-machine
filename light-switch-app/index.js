@@ -2,7 +2,7 @@ import React from 'react'
 import reactDOM from 'react-dom'
 import { LightSwitch } from './components/LightSwitch'
 
-const App = () => <LightSwitch />
+const App = () => <LightSwitch></LightSwitch>
 
 
 reactDOM.render(<App />, document.getElementById('root'))
