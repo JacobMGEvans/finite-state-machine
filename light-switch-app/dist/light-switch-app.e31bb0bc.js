@@ -36951,12 +36951,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/bulb.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/LightSwitch/bulb.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/LightSwitch.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/LightSwitch/LightSwitch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36966,7 +36966,7 @@ exports.LightSwitch = LightSwitch;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _lightSwitchMachine = require("../../machines/light-switch-machine");
+var _lightSwitchMachine = require("../../../machines/light-switch-machine");
 
 require("./bulb.css");
 
@@ -37005,14 +37005,14 @@ function LightSwitch() {
     className: "spark4"
   })))));
 }
-},{"react":"node_modules/react/index.js","../../machines/light-switch-machine":"../machines/light-switch-machine.js","./bulb.css":"components/bulb.css"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../../../machines/light-switch-machine":"../machines/light-switch-machine.js","./bulb.css":"components/LightSwitch/bulb.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _LightSwitch = require("./components/LightSwitch");
+var _LightSwitch = require("./components/LightSwitch/LightSwitch");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37021,7 +37021,7 @@ var App = function App() {
 };
 
 _reactDom.default.render(_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/LightSwitch":"components/LightSwitch.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/LightSwitch/LightSwitch":"components/LightSwitch/LightSwitch.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

@@ -1,5 +1,5 @@
 import React from "react";
-import { toggleService } from "../../machines/light-switch-machine";
+import { toggleService } from "../../../machines/light-switch-machine";
 import "./bulb.css";
 
 export function LightSwitch() {
