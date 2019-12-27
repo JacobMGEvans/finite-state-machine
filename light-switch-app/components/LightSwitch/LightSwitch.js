@@ -4,7 +4,7 @@ import "./bulb.css";
 
 export function LightSwitch() {
   return (
-    <div className="switch">
+    <div className="switch" style={{ zIndex: 99999999 }}>
       <input
         type="checkbox"
         name="toggle"

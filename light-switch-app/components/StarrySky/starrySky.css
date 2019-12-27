@@ -6,10 +6,7 @@ CodePen:
 Night sky with twinkling stars - CSS3 only
 A PEN BY WebSonick
 ================================================================================================= */
-* {
-    margin: 0;
-    padding: 0;
-}
+
 header {
     background-color:rgba(33, 33, 33, 0.9);
     color:#ffffff;

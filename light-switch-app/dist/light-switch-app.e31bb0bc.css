@@ -247,7 +247,7 @@ body {
     height: 1px;
     width: 1px;
     -webkit-animation: spark1 2s ease-in-out;
-            animation: spark1 2s ease-in-out;
+            animation: spark1 2s ease-in-out infinite;
     -webkit-animation-delay: 0.4s;
             animation-delay: 0.4s;
   }
@@ -255,7 +255,7 @@ body {
     height: 1px;
     width: 1px;
     -webkit-animation: spark2 2.4s ease-in-out;
-            animation: spark2 2.4s ease-in-out;
+            animation: spark2 2.4s ease-in-out infinite;
     -webkit-animation-delay: 0.4s;
             animation-delay: 0.4s;
   }
@@ -263,7 +263,7 @@ body {
     height: 1px;
     width: 1px;
     -webkit-animation: spark3 2s ease-in-out;
-            animation: spark3 2s ease-in-out;
+            animation: spark3 2s ease-in-out infinite;
     -webkit-animation-delay: 0.9s;
             animation-delay: 0.9s;
   }
@@ -271,7 +271,7 @@ body {
     height: 1px;
     width: 1px;
     -webkit-animation: spark4 1.7s ease-in-out;
-            animation: spark4 1.7s ease-in-out;
+            animation: spark4 1.7s ease-in-out infinite;
     -webkit-animation-delay: 0.9s;
             animation-delay: 0.9s;
   }
@@ -440,10 +440,7 @@ CodePen:
 Night sky with twinkling stars - CSS3 only
 A PEN BY WebSonick
 ================================================================================================= */
-* {
-    margin: 0;
-    padding: 0;
-}
+
 header {
     background-color:rgba(33, 33, 33, 0.9);
     color:#ffffff;

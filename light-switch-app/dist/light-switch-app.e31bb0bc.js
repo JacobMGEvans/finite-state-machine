@@ -36864,25 +36864,24 @@ var _xstate = require("xstate");
 // Stateless machine definition
 // machine.transition(...) is a pure function used by the interpreter.
 var toggleMachine = (0, _xstate.Machine)({
-  id: 'toggle',
-  initial: 'inactive',
+  id: "toggle",
+  initial: "inactive",
   states: {
     inactive: {
       on: {
-        TOGGLE: 'active'
+        TOGGLE: "active"
       }
     },
     active: {
       on: {
-        TOGGLE: 'inactive'
+        TOGGLE: "inactive"
       }
     }
   }
 }); // Machine instance with internal state
 
-var toggleService = (0, _xstate.interpret)(toggleMachine).onTransition(function (state) {
-  return console.log(state.value);
-}).start();
+var toggleService = (0, _xstate.interpret)(toggleMachine) // .onTransition(state => console.log(state.value))
+.start();
 exports.toggleService = toggleService;
 },{"xstate":"../node_modules/xstate/es/index.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
@@ -36974,7 +36973,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function LightSwitch() {
   return _react.default.createElement("div", {
-    className: "switch"
+    className: "switch",
+    style: {
+      zIndex: 99999999
+    }
   }, _react.default.createElement("input", {
     type: "checkbox",
     name: "toggle",
@@ -37044,14 +37046,18 @@ var _LightSwitch = require("./components/LightSwitch/LightSwitch");
 
 var _StarrySky = require("./components/StarrySky/StarrySky");
 
+var _lightSwitchMachine = require("../machines/light-switch-machine");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_StarrySky.StarrySky, null), _react.default.createElement(_LightSwitch.LightSwitch, null));
+  return _react.default.createElement(_react.default.Fragment, null, _lightSwitchMachine.toggleService.onTransition(function (state) {
+    return state.value;
+  }) === "active" && _react.default.createElement(_StarrySky.StarrySky, null), _react.default.createElement(_LightSwitch.LightSwitch, null));
 };
 
 _reactDom.default.render(_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/LightSwitch/LightSwitch":"components/LightSwitch/LightSwitch.js","./components/StarrySky/StarrySky":"components/StarrySky/StarrySky.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/LightSwitch/LightSwitch":"components/LightSwitch/LightSwitch.js","./components/StarrySky/StarrySky":"components/StarrySky/StarrySky.js","../machines/light-switch-machine":"../machines/light-switch-machine.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
