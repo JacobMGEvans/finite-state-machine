@@ -1,5 +1,5 @@
 import React from "react";
-import { toggleService } from "../../../machines/light-switch-machine";
+import { toggleService } from "../../machines/light-switch-machine";
 import "./bulb.css";
 
 export function LightSwitch() {
@@ -11,7 +11,7 @@ export function LightSwitch() {
         onClick={() => toggleService.send(`TOGGLE`)}
       />
       <label htmlFor="toggle">
-        <i className="bulb">
+        <i className="bulb" id="toggle">
           <span className="bulb-center" />
           <span className="filament-1" />
           <span className="filament-2" />
@@ -23,7 +23,6 @@ export function LightSwitch() {
             <i className="spark2" />
             <i className="spark3" />
             <i className="spark4" />
-            {/* <i className="sparks5" /> */}
           </span>
         </i>
       </label>
