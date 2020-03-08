@@ -33698,6 +33698,13 @@ var counterMachine = (0, _xstate.Machine)({
               return ctx.count - 1;
             }
           })
+        },
+        RESET: {
+          actions: (0, _xstate.assign)({
+            count: function count(ctx) {
+              return ctx.count * 0;
+            }
+          })
         }
       }
     }
@@ -33745,7 +33752,15 @@ function Counter() {
       width: 100,
       height: 60
     }
-  }, "DECREASE"), _react.default.createElement("span", {
+  }, "DECREASE"), _react.default.createElement("button", {
+    onClick: function onClick() {
+      return send("RESET");
+    },
+    style: {
+      width: 100,
+      height: 60
+    }
+  }, "RESET"), _react.default.createElement("span", {
     style: {
       fontSize: 100
     }

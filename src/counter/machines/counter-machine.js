@@ -11,6 +11,9 @@ export const counterMachine = Machine({
         },
         DECREMENT: {
           actions: assign({ count: ctx => ctx.count - 1 })
+        },
+        RESET: {
+          actions: assign({ count: ctx => ctx.count * 0 })
         }
       }
     }

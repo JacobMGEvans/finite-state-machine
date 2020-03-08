@@ -20,6 +20,9 @@ export default function Counter() {
       >
         DECREASE
       </button>
+      <button onClick={() => send(`RESET`)} style={{ width: 100, height: 60 }}>
+        RESET
+      </button>
       <span style={{ fontSize: 100 }}>{current.context.count}</span>
     </>
   );
