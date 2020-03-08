@@ -8,6 +8,9 @@ export const counterMachine = createMachine({
       on: {
         INCREMENT: {
           actions: assign({ count: ctx => ctx.count + 1 })
+        },
+        DECREMENT: {
+          actions: assign({ count: ctx => ctx.count - 1 })
         }
       }
     }
