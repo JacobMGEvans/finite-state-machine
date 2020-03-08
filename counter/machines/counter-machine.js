@@ -1,6 +1,6 @@
-import { createMachine, assign } from "xstate";
+import { Machine, assign } from "xstate";
 
-export const counterMachine = createMachine({
+export const counterMachine = Machine({
   initial: `active`,
   context: { count: 0 },
   states: {

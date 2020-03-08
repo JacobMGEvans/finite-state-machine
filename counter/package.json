@@ -7,6 +7,7 @@
     "start": "yarn parcel ./index.html"
   },
   "dependencies": {
+    "@xstate/react": "^0.8.1",
     "parcel-bundler": "^1.12.4",
     "react": "^16.0.0",
     "react-dom": "^16.12.0",

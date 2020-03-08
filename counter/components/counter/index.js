@@ -1,6 +1,9 @@
 import React from "react";
+import { useMachine } from "@xstate/react";
 import { counterMachine } from "../../machines/counter-machine";
 
 export default function Counter() {
-  return <div>Hello World</div>;
+  const [current, send] = useMachine(counterMachine);
+
+  return <div />;
 }

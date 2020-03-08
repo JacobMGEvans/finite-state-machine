@@ -11,8 +11,8 @@
     "start": "yarn babel-node"
   },
   "dependencies": {
-    "typescript": "^3.7.4",
-    "xstate": "^4.7.3"
+    "@xstate/react": "^0.8.1",
+    "typescript": "^3.7.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
