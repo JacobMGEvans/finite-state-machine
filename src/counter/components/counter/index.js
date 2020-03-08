@@ -5,5 +5,6 @@ import { counterMachine } from "../../machines/counter-machine";
 export default function Counter() {
   const [current, send] = useMachine(counterMachine);
 
+  console.log(curent);
   return <div />;
 }
