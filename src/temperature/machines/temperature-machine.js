@@ -9,14 +9,12 @@ export const temperatureMachine = Machine({
         CELSIUS: {
           actions: assign({
             C: (_, event) => event.value,
-            F: (_, event) =>
-              event.value.length ? +event.value * (9 / 5) + 32 : ``
+            F: (_, event) => (event.value ? +event.value * (9 / 5) + 32 : ``)
           })
         },
         FAHRENHEIT: {
           actions: assign({
-            C: (_, event) =>
-              event.value.length ? (+event.value - 32) * (5 / 9) : ``,
+            C: (_, event) => (event.value ? (+event.value - 32) * (5 / 9) : ``),
             F: (_, event) => event.value
           })
         }

@@ -33692,14 +33692,14 @@ var temperatureMachine = (0, _xstate.Machine)({
               return event.value;
             },
             F: function F(_, event) {
-              return event.value.length ? +event.value * (9 / 5) + 32 : "";
+              return event.value ? +event.value * (9 / 5) + 32 : "";
             }
           })
         },
         FAHRENHEIT: {
           actions: (0, _xstate.assign)({
             C: function C(_, event) {
-              return event.value.length ? (+event.value - 32) * (5 / 9) : "";
+              return event.value ? (+event.value - 32) * (5 / 9) : "";
             },
             F: function F(_, event) {
               return event.value;
@@ -33737,18 +33737,23 @@ function Temperature() {
   var _useMachine = (0, _react2.useMachine)(_temperatureMachine.temperatureMachine),
       _useMachine2 = (0, _slicedToArray2.default)(_useMachine, 2),
       current = _useMachine2[0],
-      send = _useMachine2[1];
+      send = _useMachine2[1]; // const handleChange = (action, eventPayload) => {
+  //   eventPayload.persist();
+  //   console.log(eventPayload);
+  //   send(action, eventPayload.nativeElement.data);
+  // };
+
 
   console.log(current, "Current");
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("input", {
     onChange: function onChange(e) {
-      return send("FARENHEIT", e);
+      return send("FAHRENHEIT", e.nativeEvent.data);
     }
   }), _react.default.createElement("br", null), _react.default.createElement("span", {
     style: sStyle
   }, "Fahrenheit:"), _react.default.createElement("br", null), _react.default.createElement("input", {
     onChange: function onChange(e) {
-      return send("CELSIUS", e);
+      return send("CELSIUS", e.nativeEvent.data);
     }
   }), _react.default.createElement("br", null), _react.default.createElement("span", {
     style: sStyle
