@@ -4,23 +4,27 @@ import { temperatureMachine } from "../../machines/temperature-machine";
 
 const sStyle = { fontSize: 20 };
 export default function Temperature() {
-  const [current, send] = useMachine(temperatureMachine);
+  const [state, send] = useMachine(temperatureMachine);
 
-  // const handleChange = (action, eventPayload) => {
-  //   eventPayload.persist();
-  //   console.log(eventPayload);
-  //   send(action, eventPayload.nativeElement.data);
-  // };
-  console.log(current, `Current`);
   return (
     <>
-      <input onChange={e => send(`FAHRENHEIT`, e.nativeEvent.data)} />
+      <input
+        type="number"
+        value={state.context.F}
+        style={sStyle}
+        onChange={e => send(`FAHRENHEIT`, { value: e.target.value })}
+        placeholder="0"
+      />
+      <span>˚F</span>
       <br />
-      <span style={sStyle}>Fahrenheit:</span>
-      <br />
-      <input onChange={e => send(`CELSIUS`, e.nativeEvent.data)} />
-      <br />
-      <span style={sStyle}>Celsius:</span>
+      <input
+        type="number"
+        value={state.context.C}
+        style={sStyle}
+        onChange={e => send(`CELSIUS`, { value: e.target.value })}
+        placeholder="0"
+      />
+      <span>˚C</span>
     </>
   );
 }

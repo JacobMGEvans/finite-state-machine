@@ -33736,28 +33736,30 @@ var sStyle = {
 function Temperature() {
   var _useMachine = (0, _react2.useMachine)(_temperatureMachine.temperatureMachine),
       _useMachine2 = (0, _slicedToArray2.default)(_useMachine, 2),
-      current = _useMachine2[0],
-      send = _useMachine2[1]; // const handleChange = (action, eventPayload) => {
-  //   eventPayload.persist();
-  //   console.log(eventPayload);
-  //   send(action, eventPayload.nativeElement.data);
-  // };
+      state = _useMachine2[0],
+      send = _useMachine2[1];
 
-
-  console.log(current, "Current");
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("input", {
+    type: "number",
+    value: state.context.F,
+    style: sStyle,
     onChange: function onChange(e) {
-      return send("FAHRENHEIT", e.nativeEvent.data);
-    }
-  }), _react.default.createElement("br", null), _react.default.createElement("span", {
-    style: sStyle
-  }, "Fahrenheit:"), _react.default.createElement("br", null), _react.default.createElement("input", {
+      return send("FAHRENHEIT", {
+        value: e.target.value
+      });
+    },
+    placeholder: "0"
+  }), _react.default.createElement("span", null, "\u02DAF"), _react.default.createElement("br", null), _react.default.createElement("input", {
+    type: "number",
+    value: state.context.C,
+    style: sStyle,
     onChange: function onChange(e) {
-      return send("CELSIUS", e.nativeEvent.data);
-    }
-  }), _react.default.createElement("br", null), _react.default.createElement("span", {
-    style: sStyle
-  }, "Celsius:"));
+      return send("CELSIUS", {
+        value: e.target.value
+      });
+    },
+    placeholder: "0"
+  }), _react.default.createElement("span", null, "\u02DAC"));
 }
 },{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","@xstate/react":"node_modules/@xstate/react/lib/index.js","../../machines/temperature-machine":"machines/temperature-machine.js"}],"index.js":[function(require,module,exports) {
 "use strict";
