@@ -1,5 +1,10 @@
 ## Start Temp Conversion Project
-```shell
+```bash
 yarn 
 yarn start
+```
+or
+```bash
+npm install 
+npm run start
 ```
