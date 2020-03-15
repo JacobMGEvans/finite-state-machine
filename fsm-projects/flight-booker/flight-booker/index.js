@@ -1,28 +1,44 @@
 import React from "react";
 import { useMachine } from "@xstate/react";
-import { temperatureMachine } from "../machines/temperature-machine";
+import { flightBookingMachine } from "../machines/flight-booker-machine";
 
 const sStyle = { fontSize: 20 };
 export default function FlightBooker() {
-  const [state, send] = useMachine(temperatureMachine);
+  const [state, send] = useMachine(flightBookingMachine);
 
   return (
     <>
       <input
-        type="number"
-        value={state.context.F}
+        type="string"
+        placeholder="Trip Type"
+        value={state.context.trip}
         style={sStyle}
-        onChange={e => send(`FAHRENHEIT`, { value: e.target.value })}
+        onChange={e => send(`SET_TRIP`, { value: e.target.value })}
       />
-      <span>˚F</span>
+      <br />
+      <input
+        type="date"
+        placeholder="Start Date"
+        value={state.context.startDate}
+        style={sStyle}
+        onChange={e => send(`startDate.UPDATE`, { value: e.target.value })}
+      />
+      <br />
+      <input
+        type="date"
+        placeholder="Return Date"
+        value={state.context.returnDate}
+        style={sStyle}
+        onChange={e => send(`returnDate.UPDATE`, { value: e.target.value })}
+      />
       <br />
       <input
         type="number"
+        placeholder=""
         value={state.context.C}
         style={sStyle}
         onChange={e => send(`CELSIUS`, { value: e.target.value })}
       />
-      <span>˚C</span>
     </>
   );
 }
