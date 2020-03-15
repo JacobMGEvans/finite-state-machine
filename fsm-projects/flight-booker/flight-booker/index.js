@@ -32,12 +32,12 @@ export default function FlightBooker() {
         onChange={e => send(`returnDate.UPDATE`, { value: e.target.value })}
       />
       <br />
-      <input
-        type="number"
+      <button
+        label="submit-trip"
+        type="submit"
         placeholder=""
-        value={state.context.C}
         style={sStyle}
-        onChange={e => send(`CELSIUS`, { value: e.target.value })}
+        onClick={() => send(`SUBMIT`)}
       />
     </>
   );
