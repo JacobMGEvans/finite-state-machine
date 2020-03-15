@@ -13,7 +13,6 @@ export default function Temperature() {
         value={state.context.F}
         style={sStyle}
         onChange={e => send(`FAHRENHEIT`, { value: e.target.value })}
-        placeholder="0"
       />
       <span>˚F</span>
       <br />
@@ -22,7 +21,6 @@ export default function Temperature() {
         value={state.context.C}
         style={sStyle}
         onChange={e => send(`CELSIUS`, { value: e.target.value })}
-        placeholder="0"
       />
       <span>˚C</span>
     </>

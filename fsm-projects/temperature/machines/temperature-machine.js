@@ -2,7 +2,7 @@ import { Machine, assign } from "xstate";
 
 export const temperatureMachine = Machine({
   initial: `active`,
-  context: { C: undefined, F: undefined },
+  context: { C: ``, F: `` },
   states: {
     active: {
       on: {
