@@ -1,9 +1,9 @@
 import React from "react";
 import { useMachine } from "@xstate/react";
-import { temperatureMachine } from "../../machines/temperature-machine";
+import { temperatureMachine } from "../machines/temperature-machine";
 
 const sStyle = { fontSize: 20 };
-export default function Temperature() {
+export default function FlightBooker() {
   const [state, send] = useMachine(temperatureMachine);
 
   return (

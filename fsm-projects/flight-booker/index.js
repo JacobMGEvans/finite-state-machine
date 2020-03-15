@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
-import Temperature from "./components/temperature";
+import FlightBooker from "./flight-booker/index";
 
 const App = () => {
   return (
     <>
-      <Temperature />
+      <FlightBooker />
     </>
   );
 };
