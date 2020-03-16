@@ -4,41 +4,51 @@ import { flightBookingMachine } from "../machines/flight-booker-machine";
 
 const sStyle = { fontSize: 20 };
 export default function FlightBooker() {
-  const [state, send] = useMachine(flightBookingMachine);
+  const [current, send] = useMachine(flightBookingMachine);
+
+  const isSubmitable = flightBookingMachine.transition(current, `SUBMIT`)
+    .changed;
 
   return (
     <>
-      <input
-        type="string"
-        placeholder="Trip Type"
-        value={state.context.trip}
-        style={sStyle}
-        onChange={e => send(`SET_TRIP`, { value: e.target.value })}
-      />
-      <br />
-      <input
-        type="date"
-        placeholder="Start Date"
-        value={state.context.startDate}
-        style={sStyle}
-        onChange={e => send(`startDate.UPDATE`, { value: e.target.value })}
-      />
-      <br />
-      <input
-        type="date"
-        placeholder="Return Date"
-        value={state.context.returnDate}
-        style={sStyle}
-        onChange={e => send(`returnDate.UPDATE`, { value: e.target.value })}
-      />
-      <br />
-      <button
-        label="submit-trip"
-        type="submit"
-        placeholder=""
-        style={sStyle}
-        onClick={() => send(`SUBMIT`)}
-      />
+      <form>
+        <input
+          type="string"
+          placeholder="Trip Type"
+          value={current.context.trip}
+          style={sStyle}
+          onChange={e => send(`SET_TRIP`, { value: e.target.value })}
+        />
+        <br />
+        <input
+          placeholder="Start Date"
+          name="startDate"
+          type="date"
+          value={current.context.startDate}
+          style={sStyle}
+          disabled={current.context.trip !== `oneWay`}
+          onChange={e => send(`startDate.UPDATE`, { value: e.target.value })}
+        />
+        <br />
+        <input
+          placeholder="Return Date"
+          name="returnDate"
+          type="date"
+          value={current.context.startDate}
+          disabled={current.context.trip === `oneWay`}
+          onChange={e => send(`returnData.UPDATE`, e.target.value)}
+        />
+        <br />
+        <button
+          type="button"
+          onClick={() => send(`SUBMIT`)}
+          disabled={!isSubmitable}
+          data-state={{ ...current.toStrings() }}
+        >
+          {current.matches(`editing`) && `Submit`}
+          {current.matches(`submitted`) && `Success!`}
+        </button>
+      </form>
     </>
   );
 }

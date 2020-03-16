@@ -4,8 +4,8 @@ export const flightBookingMachine = Machine({
   id: `flight`,
   initial: `editing`,
   context: {
-    startDate: undefined,
-    returnDate: undefined,
+    startDate: ``,
+    returnDate: ``,
     trip: `oneWay` // or 'roundTrip'
   },
   states: {
