@@ -11,7 +11,7 @@ export default function FlightBooker() {
 
   return (
     <section>
-      <form>
+      <form onSubmit={() => console.log({ ...current.context }, `onSubmit`)}>
         <select
           type="string"
           placeholder="Trip Type"
@@ -31,7 +31,6 @@ export default function FlightBooker() {
           type="date"
           style={sStyle}
           value={current.context.startDate}
-          disabled={current.context.trip !== `oneWay`}
           onChange={e => send(`startDate.UPDATE`, { value: e.target.value })}
         />
         <br />
@@ -44,14 +43,13 @@ export default function FlightBooker() {
           style={sStyle}
           value={current.context.returnDate}
           disabled={current.context.trip === `oneWay`}
-          onChange={e => send(`returnData.UPDATE`, e.target.value)}
+          onChange={e => send(`returnDate.UPDATE`, { value: e.target.value })}
         />
         <br />
         <button
-          type="button"
+          type="submit"
           onClick={() => send(`SUBMIT`)}
           disabled={!isSubmitable}
-          data-state={current.toStrings().pop()}
         >
           {current.matches(`editing`) && `Submit`}
           {current.matches(`submitted`) && `Success!`}
