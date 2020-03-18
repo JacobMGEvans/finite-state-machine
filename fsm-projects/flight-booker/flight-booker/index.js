@@ -17,9 +17,7 @@ export default function FlightBooker() {
           placeholder="Trip Type"
           value={current.context.trip}
           style={sStyle}
-          onChange={e =>
-            console.log(e.target.value) &&
-            send(`SET_TRIP`, { value: e.target.value })}
+          onChange={e => send(`SET_TRIP`, { value: e.target.value })}
         >
           <option value="oneWay">One Way Trip</option>
           <option value="roundTrip">Round Trip</option>
@@ -45,10 +43,7 @@ export default function FlightBooker() {
           type="date"
           style={sStyle}
           value={current.context.returnDate}
-          disabled={
-            console.log(current.context.trip) &&
-            current.context.trip === `oneWay`
-          }
+          disabled={current.context.trip === `oneWay`}
           onChange={e => send(`returnData.UPDATE`, e.target.value)}
         />
         <br />
