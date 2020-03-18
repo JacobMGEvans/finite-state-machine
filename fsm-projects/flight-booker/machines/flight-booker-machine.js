@@ -6,7 +6,7 @@ export const flightBookingMachine = Machine({
   context: {
     startDate: ``,
     returnDate: ``,
-    trip: `oneWay` || `roundTrip`
+    trip: `oneWay`
   },
   states: {
     editing: {
